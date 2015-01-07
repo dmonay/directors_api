@@ -27,13 +27,24 @@ var directorsSchema = new Schema({
 });
 var directors = mongoose.model('Directors', directorsSchema);
 
-
 function listAll(req, res) {
     console.log("\x1b[32;1mListAll Request received\x1b[0m");
     directors.find(function(err, directors) {
         if (err) return console.log(err);
+
+        var copy = [];
+
+        for (var i = 0; i < directors.length; i++) {
+            copy[i] = {};
+            copy[i].full_name = directors[i].full_name;
+            copy[i].dob = directors[i].dob;
+            if (directors[i].favorite_camera) copy[i].favorite_camera = directors[i].favorite_camera;
+            if (directors[i].favorite_movies) copy[i].favorite_movies = directors[i].favorite_movies;
+        };
+
+
         res.setHeader('Content-Type', 'application/json');
-        res.send(directors);
+        res.send(copy);
     });
 }
 
@@ -51,7 +62,7 @@ function register(req, res) {
             saveDir.full_name = name;
             saveDir.dob = dob;
             saveDir.save(function() {
-            	res.setHeader('Content-Type', 'application/json');
+                res.setHeader('Content-Type', 'application/json');
                 res.send("You've registered " + name);
             });
         }
@@ -75,11 +86,16 @@ function update(req, res) {
             dir = director[0];
 
         if (camera) dir.favorite_camera = camera;
-        if (fave_movies) dir.favorite_movies.push(fave_movies);
+        if (fave_movies) {
+            for (var i = 0; i < fave_movies.length; i++) {
+                dir.favorite_movies.push(fave_movies[i])
+            };
+        }
         dir.save(function() {
-        	res.setHeader('Content-Type', 'application/json');
+            res.setHeader('Content-Type', 'application/json');
             res.send("You've updated " + name + "'s profile!");
         });
     }
 
 }
+
