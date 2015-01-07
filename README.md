@@ -6,8 +6,13 @@
 ```
 node server.js
 ```
+3) Testing - run
 
-3) API endpoints:
+```
+jasmine-node spec/
+```
+
+4) API endpoints:
 
 ### Register a director
 

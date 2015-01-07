@@ -21,6 +21,7 @@ var directors = mongoose.model('Directors', directorsSchema);
 // --------------------------
 
 
+// register handlers and start server
 app.get('/getall', getAll);
 app.post('/register', register);
 app.post('/update', update);
