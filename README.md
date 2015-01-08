@@ -1,18 +1,22 @@
 # Coding challenge for Livestream
 
-1) Create a database in local mongo called "directors_api"
-
-2) To start the Node server, run
+1) To start the Node server, run
 ```
 node server.js dev
 ```
-3) Testing
 
+2) Testing
+
+Restart the server with 
+```
+node server.js test
+```
+and then run 
 ```
 sh test_script.sh
 ```
 
-4) API endpoints:
+3) API endpoints:
 
 ### Register a director
 
