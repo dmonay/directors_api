@@ -1,11 +1,17 @@
 function update(req, res, directors) {
     console.log("\x1b[32;1mUpdate Request received\x1b[0m");
-    var name = req.body.name,
-        find_dir = new RegExp(name);
-
-    directors.find({
-        full_name: find_dir
-    }, callback);
+    var name, find_dir = new RegExp(name);
+    
+    if (req.body.name) {
+        name = req.body.name;
+        directors.find({
+            full_name: find_dir
+        }, callback);
+    } else {
+        res.status(400);
+        res.setHeader('Content-Type', 'application/json');
+        res.send("Please provide the director's name!");
+    }
 
     function callback(err, director) {
         if (err) return console.log(err);

@@ -1,7 +1,7 @@
 {
     "name": "Directors_API",
     "version": "0.0.1",
-    "description": "A simple server to register and list directors who have an account on Livestream",
+    "description": "A simple server to register, list, and update directors who have an account on Livestream",
     "repository": {
         "type": "git",
         "url": "https://github.com/dmonay/directors_api"
@@ -10,7 +10,9 @@
         "express": "^4.10.6",
         "mongoose": "^3.8.20",
         "body-parser": "^1.10.0",
-        "jasmine-node": "1.14.5",
         "request": "^2.51.0"
+    },
+    "scripts": {
+        "preinstall": "npm list jasmine-node -g || npm install jasmine-node -g"
     }
 }

@@ -23,7 +23,6 @@ var directorsSchema = new Schema({
 if (env === "test") {
 	directors = mongoose.model('Test', directorsSchema);
 } else if(env === "dev") {
-	console.log('dev');
 	directors = mongoose.model('Directors', directorsSchema);
 } else {
 	console.log('\x1b[31;1mPlease enter a third argument!\x1b[0m');

@@ -1,11 +1,18 @@
 # Coding challenge for Livestream
 
-1) To start the Node server, run
+1) cd into directory and run
+```
+npm install
+```
+*NOTE*: This will install the module jasmine-node globally. This is necessary to 
+execute the unit test shell script. 
+
+2) To start the Node server, run
 ```
 node server.js dev
 ```
 
-2) Testing
+3) Testing
 
 Restart the server with 
 ```
@@ -16,7 +23,7 @@ and then run
 sh test_script.sh
 ```
 
-3) API endpoints:
+4) API endpoints:
 
 ### Register a director
 
