@@ -1,5 +1,8 @@
 # Coding challenge for Livestream
 
+### Dependencies
+- MongoDB
+
 1) cd into directory and run
 ```
 npm install
