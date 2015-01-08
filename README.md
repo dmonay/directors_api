@@ -29,6 +29,7 @@ sh test_script.sh
 
     POST /register
     
+*NOTE*: You cannot register a director that's already registered. 
 
 **Sample Request Body**
 

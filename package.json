@@ -10,7 +10,8 @@
         "express": "^4.10.6",
         "mongoose": "^3.8.20",
         "body-parser": "^1.10.0",
-        "request": "^2.51.0"
+        "request": "^2.51.0",
+        "crypto-js": "^3.1.2-5"
     },
     "scripts": {
         "preinstall": "npm list jasmine-node -g || npm install jasmine-node -g"

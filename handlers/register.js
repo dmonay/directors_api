@@ -33,7 +33,7 @@ function register(req, res, directors) {
             dob = body.dob;
 
             alreadyRegistered(name, function(resp) {
-                if (resp) {
+                if (resp === true) {
                     sendError("This director is already registered!");
                 } else {
                     registerDir.full_name = name;
