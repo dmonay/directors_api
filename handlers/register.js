@@ -15,6 +15,7 @@ function register(req, res, directors) {
             registerDir.dob = dob;
             registerDir.save(function() {
                 res.setHeader('Content-Type', 'application/json');
+                res.status(201);
                 res.send("You've registered " + name);
             });
         }

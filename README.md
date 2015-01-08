@@ -2,14 +2,14 @@
 
 1) Create a database in local mongo called "directors_api"
 
-2) To run the Node server, please run
+2) To start the Node server, run
 ```
-node server.js
+node server.js dev
 ```
-3) Testing - run
+3) Testing
 
 ```
-jasmine-node spec/
+sh test_script.sh
 ```
 
 4) API endpoints:

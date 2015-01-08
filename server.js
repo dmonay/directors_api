@@ -9,6 +9,7 @@ app.use(bodyParser.json());
 
 
 // --- Set up mongo -----
+var directors, env = process.argv[2];
 mongoose.connect('mongodb://localhost/directors_api');
 var Schema = mongoose.Schema;
 var directorsSchema = new Schema({
@@ -17,7 +18,19 @@ var directorsSchema = new Schema({
     favorite_camera: String,
     favorite_movies: Array
 });
-var directors = mongoose.model('Directors', directorsSchema);
+
+// create collection depending on cli argument
+if (env === "test") {
+	console.log('test');
+	directors = mongoose.model('Test', directorsSchema);
+} else if(env === "dev") {
+	console.log('dev');
+	directors = mongoose.model('Directors', directorsSchema);
+} else {
+	console.log('\x1b[31;1mPlease enter a third argument!\x1b[0m');
+	process.exit(1);
+}
+
 // --------------------------
 
 
