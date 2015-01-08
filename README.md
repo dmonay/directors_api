@@ -57,7 +57,9 @@ sh test_script.sh
 **Sample Request Body**
 
 *NOTE*: 
+
 1. Include the director's name, favorite camera, and  favorited movies. The latter must be an array. If either the favorite camera or the favorite movies property is omitted, it will not be updated. 
+
 2. Include a proper Authorization header with all requests to this endpoint. 
 
 ```json
