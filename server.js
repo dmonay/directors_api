@@ -21,7 +21,6 @@ var directorsSchema = new Schema({
 
 // create collection depending on cli argument
 if (env === "test") {
-	console.log('test');
 	directors = mongoose.model('Test', directorsSchema);
 } else if(env === "dev") {
 	console.log('dev');

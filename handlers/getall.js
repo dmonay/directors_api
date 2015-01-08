@@ -1,8 +1,10 @@
 function getAll(req, res, directors) {
     console.log("\x1b[32;1mListAll Request received\x1b[0m");
-    directors.find(function(err, directors) {
-        if (err) return console.log(err);
+    directors.find(callback);
 
+    function callback(err, directors) {
+        if (err) return console.log(err);
+        console.log(typeof(err), typeof(directors));
         var copy = [];
 
         for (var i = 0; i < directors.length; i++) {
@@ -15,7 +17,7 @@ function getAll(req, res, directors) {
 
         res.setHeader('Content-Type', 'application/json');
         res.send(copy);
-    });
+    }
 }
 
 module.exports = getAll;

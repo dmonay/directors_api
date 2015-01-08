@@ -2,11 +2,12 @@ var getall = require("../handlers/getall.js"),
     request = require('request');
 
 describe("The getall handler", function() {
+
     it("should exist", function() {
         expect(getall).toBeDefined();
     });
 
-    it("should respond with all of the directors' profiles", function() {
+    it("should find all entries in mongo", function() {
 
         // set up mocks
         var directors = {},
@@ -44,7 +45,6 @@ describe("The getall handler", function() {
         }];
 
         request("http://localhost:1436/getall", function(error, response, body) {
-        	
         	// request returns a string representation of the object,
         	// so we convert it back to an object
             var body_objectified = JSON.parse(body);

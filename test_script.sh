@@ -8,7 +8,7 @@ mongorestore  --collection tests --db directors_api mongo_dump/tests.bson
 
 # run specs
 echo ""
-echo '\x1b[31;1mStarting unit tests\x1b[0m'
+echo '\x1b[31;1mRunning unit tests\x1b[0m'
 
 jasmine-node spec/
 
